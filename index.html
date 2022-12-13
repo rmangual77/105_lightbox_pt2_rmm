@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <title>Lightbox Gallery</title>
+    <link rel="stylesheet" href="gallery.css" />
+    <link rel="stylesheet" href="lightbox.css" />
+    <link rel="stylesheet" href="css/styling.css" />
+  </head>
+  <body>
+    <!-- Gallery/Image Code -->
+
+    <!-- Lightbox Code -->
+    <div id="lightboxContainer">
+      <div id="lightboxBackground" class="closer"></div>
+      <img id="lightbox" src="" alt="" />
+      <img
+        id="pic1"
+        src="images/1_Full_Straight_Front_NA-7aab37d6893c39c3c2e5a4e5a259dbab.jpg"
+        alt=""
+      />
+      <img
+        id="pic2"
+        src="images/IBA_JIVAX2_GH_RESIZEd_848439-ac757dbe3faac6b43a93f72c85151ffe.jpg"
+        alt=""
+      />
+      <img
+        id="pic3"
+        src="images/1_Full_Straight_Front_NA-70f64e0724cf702171537394bd853dd8.jpg"
+        atl=""
+      />
+      <img src="" alt="" id="coffeeImage" />
+      <span id="lightboxCloser" class="closer">×</span>
+    </div>
+
+    <!-- Lightbox JavaScript -->
+    <script type="text/javascript">
+      let lightboxContainer = document.getElementById("lightboxContainer");
+      let lightboxBackground = document.getElementById("lightboxBackground");
+      let lightbox = document.getElementById("lightbox");
+      let lightboxCloser = document.getElementById("lightboxCloser");
+      lightbox.style.width = "400px";
+      lightbox.style.height = "400px";
+
+      function openLightbox() {
+        lightboxContainer.classList.add("display");
+        lightbox.src = this.src;
+      }
+
+      let coffeeImage = document.getElementById("coffeeImage");
+      coffeeImage.onclick = openLightbox;
+
+      function closeLightbox() {
+        lightboxContainer.classList.remove("display");
+        lightbox.src = "";
+      }
+
+      lightboxBackground.onclick = closeLightbox;
+      lightboxCloser.onclick = closeLightbox;
+
+      let pic1 = document.getElementById("pic1");
+      pic1.onclick = openLightbox;
+
+      let pic2 = document.getElementById("pic2");
+      pic2.onclick = openLightbox;
+
+      let pic3 = document.getElementById("pic3");
+      pic3.onclick = openLightbox;
+    </script>
+  </body>
+</html>
